@@ -1,6 +1,6 @@
 name: "sops"
 version: "0.1.0"
 usage: "decrypt values files"
-description: "get the last release name"
+description: "decrypt SOPS encrypted value files"
 ignoreFlags: false
 command: "${HELM_PLUGIN_DIR}/sops.sh"
