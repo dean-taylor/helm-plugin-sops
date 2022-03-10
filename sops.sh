@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 
 TMP_DIR=$(mktemp -d)
 function cleanup () {
@@ -13,6 +13,7 @@ eval set -- "$TEMP"
 unset TEMP
 
 trap cleanup EXIT
+set -e
 
 VALUES=()
 while true; do
