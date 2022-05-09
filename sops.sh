@@ -19,6 +19,7 @@ VALUES=()
 while true; do
 	case "$1" in
 		'-f'|'--values')
+                        [[ -f "${2}" ]] || { >&2 echo "Values file $2 does not exist"; exit 128; }
 			if grep -q '^sops:$' "${2}"; then
 				TMP_FILE=$(mktemp -u $TMP_DIR/tmp.XXXXXXXXXX)
 				(umask 0077; mkfifo "${TMP_FILE}") 
